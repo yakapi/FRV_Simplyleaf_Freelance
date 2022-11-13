@@ -1,4 +1,4 @@
-import React , {useContext, useState} from 'react'
+import React , {useContext, useState, useEffect} from 'react'
 import {ParameterContext} from "../../../context/parameterContext"
 import TimeView from "./time_view"
 
@@ -7,9 +7,6 @@ export default function TimeboardCard({nb}){
   const [timeBoardState, setTimeBoardState] = useState(false)
   let pos = parseInt(nb)
   const toggleDay = (e) => {
-    // e.preventDefault()
-    console.log(e.target.checked);
-    console.log(e);
     if (e.target.checked) {
       setTimeBoardState(true)
     }else {
@@ -17,13 +14,17 @@ export default function TimeboardCard({nb}){
     }
 
   }
+  useEffect(()=>{
+    setTimeBoardState(timeSetting[nb].state)
+  },[])
   return(
     <div className="timecard_box">
       <div  className="timeboard_box">
         <h2>{timeSetting[pos].name}</h2>
+        <input type="hidden" value={timeSetting[nb].id}/>
         <div className="onOff">
           <label className="switch">
-            <input onClick={toggleDay} type="checkbox" />
+            <input onChange={toggleDay} checked={timeBoardState} type="checkbox" />
             <span className="slider round"></span>
           </label>
         </div>

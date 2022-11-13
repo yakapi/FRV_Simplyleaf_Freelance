@@ -1,10 +1,12 @@
 import {ParameterContextProvider} from '../../../context/parameterContext'
 import Horaire from './horaire'
+import ParameterModal from './parametre_modal'
 
 export default function ParametrePlugin(){
   return(
     <ParameterContextProvider>
       <div className="plugin_container">
+      <ParameterModal />
         <div className="plugin_brik"></div>
         <div className="plugin_box">
           <h2 className="title_plugin">Parametre</h2>

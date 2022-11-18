@@ -140,6 +140,7 @@ table {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		background: #ECECEC;
 		flex-direction: column;
 		background-size: cover;
 	}
@@ -310,6 +311,7 @@ table {
 		padding-top: 55px;
 		height: 100vh;
 		display: flex;
+		background: #ECECEC;
 		flex-direction: column;
 		justify-content: space-between;
 	}
@@ -369,11 +371,10 @@ table {
 	}
 	.plugin_box{
 		margin-left: 120px;
-		height: 150px;
 		padding: 45px;
 	}
 	.title_plugin{
-		position: fixed;
+		position: absolute;
 		top: 56px;
 		left: 120px;
 		display: flex;
@@ -630,6 +631,7 @@ input:checked + .slider:before {
 }
 .time_config input{
 	width: 20px;
+	border-radius: 5px;
 	border-top: 1px solid white;
 	border-right: 1px solid white;
 	border-left: 1px solid white;
@@ -682,5 +684,118 @@ input:checked + .slider:before {
 	width: 100%;
 	height: 100vh;
 }
+.zone_container{
+	display: flex;
+	gap: 25px;
+	justify-content: space-between;
+}
+.cedex_box{
+	border: 2px solid #77b55a;
+	border-radius: 5px;
+	padding: 15px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.cedex_title{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 8px;
+	border-bottom: 2px solid #77b55a;
+padding-bottom: 5px;
+}
+.cedex_box p{
+	font-size: 14px;
+	color: grey;
+	font-style: italic;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+}
+.cedex_box span{
+	font-size: 11px;
+	margin-left: 3px;
+	transform: translateY(-1px);
+}
+.add_input_zone{
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+.add_input_button{
+	background: #77b55a;
+	border-radius: 100%;
+	display: flex;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	height: 34px;
+	width: 34px;
+}
+.add_input_button p{
+	color: white;
+	font-weight: bold;
+	font-size: 28px;
+	font-style: normal;
+	transform: translateX(0.5px) translateY(-0.5px);
+}
+.input_zone_loader{
+	margin: 35px;
+	display: flex;
+	justify-content: center;
+}
+.zi_list_line{
+	display: flex;
+	position: relative;
+	border: 2px solid #77b55a;
+	border-radius: 3px;
+	margin-right: 5vw;
+	margin-left: 5vw;
+	margin-top: 10px;
+	gap: 3px;
+}
+.t1{
+	width: 50px;
+	padding: 3px 5px;
+	background: rgba(0, 0, 0, 0);
+	border: 1px solid rgba(255, 0, 0, 0);
+}
+.t2{
+	padding: 3px 5px;
+	border-top: 1px solid rgba(255, 0, 0, 0);
+	border-right: 1px solid rgba(255, 0, 0, 0);
+	border-bottom: 1px solid rgba(255, 0, 0, 0);
+	border-left: 1px solid #77b55a;
+	background: rgba(0, 0, 0, 0);
+	flex: 2;
+}
+.tcl{
+	width: 100%;
+	display: flex;
+	margin-top: 5px;
+	justify-content: center;
+}
+.delete_cedex{
+	width: 20px;
+	height: 18px;
+	border-radius: 40px;
+	position: absolute;
+	right: -35px;
+	top: 3px;
+	cursor: pointer;
+	background: #CD431A;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.delete_cedex p{
+	color: white;
+	transform: translateX(-1.5px) translateY(-1.5px);
+	font-weight: bold;
+	font-size: 24px;
+}
+
 /* PARAMETRE PLUGIN */
 /* PARAMETRE PLUGIN */

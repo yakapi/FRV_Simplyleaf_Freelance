@@ -1,5 +1,6 @@
 import {ParameterContextProvider} from '../../../context/parameterContext'
 import Horaire from './horaire'
+import Zone from './zone'
 import ParameterModal from './parametre_modal'
 
 export default function ParametrePlugin(){
@@ -13,6 +14,9 @@ export default function ParametrePlugin(){
           <div className="content_plugin">
             <div className="content_box">
               <Horaire />
+            </div>
+            <div className="content_box">
+              <Zone />
             </div>
           </div>
         </div>

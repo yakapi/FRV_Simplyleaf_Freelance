@@ -4,7 +4,7 @@ import ParameterLoader from './parametre_loader'
 import TimeboardCard from './timeboard_card'
 
 export default function Horaire(){
-  const {setModalTimeState, parameterState, getTimeParameter, setTimeSetting, setParameterState, updateTimeParameter} = useContext(ParameterContext)
+  const {setModalTimeResult,setModalTimeState, parameterState, getTimeParameter, setTimeSetting, setParameterState, updateTimeParameter} = useContext(ParameterContext)
   const TimeParameterLoader = async ()=>{
     try {
      const cred = await getTimeParameter()
@@ -21,9 +21,9 @@ export default function Horaire(){
         await updateTimeParameter(construct[i].id, construct[i])
       }
 
-      return "succès"
+      setModalTimeResult("Paramêtre Enregister")
     } catch (e) {
-      return "error"
+      setModalTimeResult("Erreur")
     }
   }
   const saveTimeLine = (e)=>{

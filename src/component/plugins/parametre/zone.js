@@ -77,8 +77,18 @@ export default function Zone(){
 
     let cedexType = ''
     let reverseCedexType = ''
+    let intime_inputsdata = []
     if (e.target.parentElement.children[0].value != undefined) {
       if (e.target.parentElement.children[0].value == "simple") {
+        let ziline = e.target.parentElement.parentElement.parentElement.children[1].querySelectorAll('.zi_list_line')
+        for (var i = 1; i < ziline.length; i++) {
+          let ziline_object = {
+            cedex: ziline[i].children[0].value,
+            name: ziline[i].children[1].value
+          }
+          intime_inputsdata.push(ziline_object)
+        }
+
         let array_fx = []
         let array_reverse = []
         array_fx.push(inputList[1])
@@ -86,6 +96,14 @@ export default function Zone(){
         array_reverse.push(inputList[0])
         reverseCedexType = array_reverse[0]
       }else {
+        let ziline = e.target.parentElement.parentElement.parentElement.children[1].querySelectorAll('.zi_list_line')
+        for (var i = 1; i < ziline.length; i++) {
+          let ziline_object = {
+            cedex: ziline[i].children[0].value,
+            name: ziline[i].children[1].value
+          }
+          intime_inputsdata.push(ziline_object)
+        }
         let array_fx = []
         let array_reverse = []
         array_fx.push(inputList[0])
@@ -94,10 +112,15 @@ export default function Zone(){
         reverseCedexType = array_reverse[0]
       }
       // console.log(cedexType);
+      console.log('HERRRERERERE');
+      console.log(cedexType.inputs_data);
+      console.log(intime_inputsdata);
+      cedexType.inputs_data = intime_inputsdata
       let newCedex = {"cedex": null, "name": null}
       cedexType.inputs_data.push(newCedex)
       // console.log(cedexType);
       let constructCedex = []
+      console.log(cedexType);
       if (e.target.parentElement.children[0].value == "simple") {
         constructCedex.push(reverseCedexType)
         constructCedex.push(cedexType)

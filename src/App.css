@@ -799,3 +799,41 @@ padding-bottom: 5px;
 
 /* PARAMETRE PLUGIN */
 /* PARAMETRE PLUGIN */
+
+/* SERVICES PLUGIN */
+/* SERVICES PLUGIN */
+	.services_genre_board{
+		display: flex;
+		gap:5px;
+	}
+	.services_genre_choice{
+		padding: 5px 10px;
+		border-radius: 5px;
+		border: 2px solid #77b55a;
+		transition: all .3s ease-in-out;
+	}
+	.services_genre_choice:hover, .selected_genre_choice{
+		background: #77b55a;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.services_genre_screen{
+		margin-top: 10px;
+		border-radius: 5px;
+		border: 2px solid #77b55a;
+		margin-bottom: 10px;
+	}
+	.services_screen_choice{
+		display: none;
+	}
+	.selected_screen_choice{
+		display: block;
+		padding: 5px;
+	}
+	.flx_right{
+		display: flex;
+		justify-content: flex-end;
+	}
+/* SERVICES PLUGIN */
+/* SERVICES PLUGIN */

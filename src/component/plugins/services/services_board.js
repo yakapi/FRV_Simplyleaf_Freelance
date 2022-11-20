@@ -1,18 +1,10 @@
-import React , {useContext} from "react"
-import uuid from 'react-uuid';
 
-import {ServicesContext} from "../../../context/servicesContext"
-
-
-export default function ServicesBoard(){
-  const {servicesZone, setServicesZone, selectType} = useContext(ServicesContext)
-
-
+export default function ServicesBoard({viewChoice}){
   return(
     <div className="services_genre_board">
-      {servicesZone.map((element)=>(
-        <p onClick={selectType} key={uuid()} className={element.class_board}>{element.type}</p>
-      ))}
+      <p onClick={viewChoice} className="services_genre_choice selected_genre_choice">femme</p>
+        <p onClick={viewChoice} className="services_genre_choice">homme</p>
+          <p onClick={viewChoice} className="services_genre_choice">enfant</p>
     </div>
   )
 }

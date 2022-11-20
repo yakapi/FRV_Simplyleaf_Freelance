@@ -7,37 +7,19 @@ import {auth, db} from '../firebase-config'
 export const ServicesContext = createContext()
 
 export function ServicesContextProvider(props){
-  const [servicesZone, setServicesZone] = useState([{
-    type: "Femme",
-    class_board: "services_genre_choice selected_genre_choice",
-    class_screen: "services_screen_choice selected_screen_choice"
-  },{
-    type: "Homme",
-    class_board: "services_genre_choice",
-    class_screen: "services_screen_choice"
-  },{
-    type: "Enfant",
-    class_board: "services_genre_choice",
-    class_screen: "services_screen_choice"
 
-  }])
-  const selectType = (e) => {
-    let newService = servicesZone
-    for (var i = 0; i < newService.length; i++) {
-      if (e.target.innerHTML == newService[i].type) {
-        newService[i].class_board = "services_genre_choice selected_genre_choice"
-        newService[i].class_screen = "services_screen_choice selected_screen_choice"
-      }else {
-        newService[i].class_board = "services_genre_choice"
-        newService[i].class_screen = "services_screen_choice"
-      }
-    }
-    setServicesZone(newService)
-    console.log(servicesZone);
+  const [servicesLoader, setServicesLoader] = useState(true)
+  const [servicesCollection , setServicesCollection] = useState(false)
+  const getServicesCollection = async () => {
+    const collectionServices = collection(db, 'services')
+    const servicesSnapshot = await getDocs(collectionServices)
+    const servicesList = servicesSnapshot.docs.map(doc => doc.data())
+    return servicesList
+
   }
-
+  const test = "test"
   return(
-    <ServicesContext.Provider value={{servicesZone, setServicesZone, selectType}}>
+    <ServicesContext.Provider value={{servicesLoader, setServicesLoader, getServicesCollection, setServicesCollection, servicesCollection}}>
       {props.children}
     </ServicesContext.Provider>
   )

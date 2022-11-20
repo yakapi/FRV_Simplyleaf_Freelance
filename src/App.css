@@ -835,5 +835,19 @@ padding-bottom: 5px;
 		display: flex;
 		justify-content: flex-end;
 	}
+	.services_loader{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 55px;
+	}
+	.services_ariane{
+		display: flex;
+		align-items: center;
+		grid-gap: 2px;
+		font-size: 13px;
+		font-style: italic;
+		color: gray;
+	}
 /* SERVICES PLUGIN */
 /* SERVICES PLUGIN */
